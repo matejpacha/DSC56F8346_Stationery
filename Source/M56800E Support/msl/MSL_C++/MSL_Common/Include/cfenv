@@ -1,0 +1,38 @@
+/* MSL
+ * Copyright © 2008- Freescale Corporation.  All rights reserved.
+ *
+ * $Date$
+ * $Revision$
+ */
+
+#ifndef _MSL_CFENV
+# define _MSL_CFENV
+
+# include <mslconfig>
+# include <fenv.h>
+
+_MSL_START_TR1_NAMESPACE
+
+// types
+using ::fenv_t;
+using ::fexcept_t;
+
+// functions
+using ::feclearexcept;
+using ::fegetexceptflag;
+using ::feraiseexcept;
+using ::fesetexceptflag;
+using ::fetestexcept;
+
+using ::fegetround;
+using ::fesetround;
+
+using ::fegetenv;
+using ::feholdexcept;
+using ::fesetenv;
+using ::feupdateenv;
+
+_MSL_END_TR1_NAMESPACE
+
+#endif // _MSL_CFENV
+

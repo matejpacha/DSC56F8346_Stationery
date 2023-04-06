@@ -1,0 +1,73 @@
+===============================================================================
+MSL C++ Release Notes
+===============================================================================
+
+Version: 13.0
+Date:    November 08, 2007
+Author:  Cecilia Galvan
+Original Author:  Howard Hinnant
+        
+===============================================================================
+Current version is:                                
+(__MSL_CPP__ == 0x00013000)
+
+These release notes document changes since Version 12.0 
+(__MSL_CPP__ == 0x00012000)
+===============================================================================
+
+===============================================================================
+New Features Since Core 12.0
+===============================================================================
+
+This release was to increase conformance and stability. No new features have 
+been added. 
+
+===============================================================================
+Bugs fixed Since Core 12.0
+===============================================================================
+
+*   sort_heap() had the wrong complexity. New implementation for std::pop_heap()
+
+*   Explicitly specifying template parameters was causing __convert_iterator<int*> 
+	to be instantiated during overload resolution. Adding restrict_to<> to remove 
+	the overload from the overload set    
+
+*   Fixed typo in placeholders.  operator== should be operator! 
+
+*   Fixes in vector<bool>::const_reference to increasing the conformance of vector<bool> 
+
+*   Adding <char_traits> to factored char_traits<> out from "string"
+
+*   Fixed incorrect use of is_convertible<> in <fucntional>, which should have been 
+    is_base_of<>. 
+
+*   hash_map and hash_multimap generated two identical operator() function overloads. 
+    Remove_const in definition of non_const_value_type typedef.
+
+*   Changing return type for RandomAccessIterator in terms of operator+ 
+    and operator* instead since this is guaranteed to return a reference  
+
+*   Changed moneypunct::do_grouping() to return "" to be consistent with the 
+    C localization defaults 
+
+*   Changed unspecialized numeric_limits<T>::min(), etc returns T(0), not T(). 
+
+*   Fixed infinate loop in msl_smart_pointers when _MSL_SHARED_PTR_HAS_MUTEX 
+    is defined. 
+
+*   Gave non-move range-based priority_queue ctor default values for 3rd and 4th args
+        
+*   Fixed basic_stringbuf default constructor to meet standard post-conditions
+
+*   Removed alloc.max_size()/2 from basic_string::max_size
+
+*   Incorrect use of is_convertible<>, which should have been is_base_of<>.
+
+*   Renamed std::tr1::detail::nat (in <type_traits>) to std::tr1::detail::nat_
+
+*   Corrected typdef of std::vector<bool>::const_iterator to bool
+
+*   vector<bool>::const_iterator should return bools instead of bit_const_references
+
+===============================================================================
+Freescale Corporation

@@ -1,0 +1,14 @@
+/* MSL
+ * Copyright © 2008- Freescale Corporation.  All rights reserved.
+ *
+ * $Date:
+ * $Revision:
+ */
+
+#ifndef _CSTDBOOL
+# define _CSTDBOOL
+
+# include <stdbool.h>
+
+#endif // _CSTDBOOL
+
